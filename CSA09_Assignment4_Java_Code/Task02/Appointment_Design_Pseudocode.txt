@@ -1,0 +1,35 @@
+TASK 2: HOSPITAL OUTPATIENT APPOINTMENT DESK
+
+Event mapping:
+- Patient ID field: ActionEvent / ActionListener
+- Department combo box: ItemEvent / ItemListener
+- Doctor combo box: ItemEvent / ItemListener
+- Time slot combo box: ItemEvent / ItemListener
+- Book button: ActionEvent / ActionListener
+- Window: WindowEvent / WindowAdapter or WindowListener
+
+RefreshDoctors:
+1. Read selected department.
+2. Clear existing doctor list.
+3. Retrieve doctors for selected department.
+4. Add each doctor to the doctor combo box.
+5. If no doctors exist, display "No doctors available".
+
+BookAppointment:
+1. Read patient ID, department, doctor and time slot.
+2. Reject empty patient ID.
+3. Reject missing doctor or time slot.
+4. Check appointment availability.
+5. If unavailable, display "Slot not available".
+6. Save appointment and display confirmation.
+
+Suggested component tree:
+JFrame AppointmentWindow
+  MainPanel (BorderLayout)
+    FormPanel (GridLayout)
+      Patient ID JLabel + JTextField
+      Department JLabel + JComboBox
+      Doctor JLabel + JComboBox
+      Time Slot JLabel + JComboBox
+    ButtonPanel with Book JButton
+    Status JLabel
